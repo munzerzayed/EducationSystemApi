@@ -62,20 +62,6 @@ Route::group(['middleware' => ['api']] , function(){
 
     Route::group(['prefix' => 'lessonWork'] , function(){
 
-        /*Route::group(['prefix' => 'superAdmin'] , function(){
-            Route::group(['middleware' => ['ensureUserHasRole:superAdmin']] , function(){
-                Route::get('lessons', [AdminLessonController::class, 'index']);
-                Route::get('show/{id}', [AdminLessonController::class, 'show']);
-                Route::post('store', [AdminLessonController::class, 'store']);
-                Route::post('update/{id}', [AdminLessonController::class, 'update']);
-                Route::post('destroy/{id}', [AdminLessonController::class, 'destroy']);
-                Route::post('add-user', [AdminLessonController::class, 'addUser']);
-                Route::post('remove-user', [AdminLessonController::class, 'removeUser']);
-                Route::get('{lessonId}/lesson-students', [AdminLessonController::class, 'getStudentLessons']);
-                Route::get('{lessonId}/lesson-teachers', [AdminLessonController::class, 'getTeacherLessons']);
-            });
-        });*/
-
         Route::group(['prefix' => 'teacher'] , function(){
             Route::group(['middleware' => ['ensureUserHasRole:teacher']] , function(){
                 Route::get('all', [TeacherLessonWorkController::class, 'getAllMyLessonWork']);

@@ -24,17 +24,16 @@ class LessonWorkService
         }
     }
 
-    public function getLessonWorksByLesson()
+    public function getLessonWorksByLesson($lessonIs)
     {
         try {
             $user = Auth::guard('user-api')->user();
 
-            return LessonWork::where('lessonId', $user->id)->get();
+            return LessonWork::where('lessonId', $lessonIs)->get();
         } catch (Exception $e) {
             throw new Exception('Could not retrieve lesson works', 500);
         }
     }
-
 
     public function getLessonWorkById($lessonWorkId)
     {

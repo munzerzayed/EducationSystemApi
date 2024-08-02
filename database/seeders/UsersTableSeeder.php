@@ -16,28 +16,40 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-          // Create the student user
-        $studentUser = User::create([
+
+        /*$studentUser = User::create([
             'name' => 'Student User',
             'email' => 'student@example.com',
             'password' => bcrypt('password')
         ]);
+        $studentUser->assignRole('student');*/
+
+        $studentUser = User::create([
+            'name' => 'Student User1',
+            'email' => 'student1@example.com',
+            'password' => bcrypt('password')
+        ]);
         $studentUser->assignRole('student');
 
-        // Create the teacher user
-        $teacherUser = User::create([
+        /*$teacherUser = User::create([
             'name' => 'Teacher User',
             'email' => 'teacher@example.com',
             'password' => bcrypt('password')
         ]);
+        $teacherUser->assignRole('teacher');*/
+
+        $teacherUser = User::create([
+            'name' => 'Teacher User1',
+            'email' => 'teacher1@example.com',
+            'password' => bcrypt('password')
+        ]);
         $teacherUser->assignRole('teacher');
 
-        // Create the super Admin
-        $teacherUser = User::create([
+        /*$teacherUser = User::create([
             'name' => 'Super Admin',
             'email' => 'superAdmin@example.com',
             'password' => bcrypt('password')
         ]);
-        $teacherUser->assignRole('superAdmin');
+        $teacherUser->assignRole('superAdmin');*/
     }
 }

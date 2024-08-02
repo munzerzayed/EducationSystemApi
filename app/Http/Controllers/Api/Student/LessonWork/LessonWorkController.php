@@ -18,6 +18,7 @@ class LessonWorkController extends Controller
     {
         $this->lessonWorkService = $lessonWorkService;
     }
+
     //Get Lesson Works by lesson
     public function index($lessonId)
     {
@@ -32,7 +33,7 @@ class LessonWorkController extends Controller
     public function getAllMyLessonWork()
     {
         try {
-            $lessonWorks = $this->lessonWorkService->getLessonWorksByLesson();
+            $lessonWorks = $this->lessonWorkService->getLessonWorks();
             return $this->returnData('data', $lessonWorks, 'Lesson works for lesson retrieved successfully');
         } catch (Exception $e) {
             return $this->returnError('500', $e->getMessage());
