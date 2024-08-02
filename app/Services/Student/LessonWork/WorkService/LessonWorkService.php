@@ -24,12 +24,16 @@ class LessonWorkService
         }
     }
 
-    public function getLessonWorksByLesson($lessonIs)
+    public function getLessonWorksByLesson($lessonId)
     {
         try {
             $user = Auth::guard('user-api')->user();
+            $lesson = Lesson::findOrFail($lessonId);
+            if (!$lesson->users()->where('userId', $user->id)->exists()) {
+                throw new Exception('Unauthorized: You can only view works in your own lessons.', 403);
+            }
 
-            return LessonWork::where('lessonId', $lessonIs)->get();
+            return LessonWork::where('lessonId', $lessonId)->get();
         } catch (Exception $e) {
             throw new Exception('Could not retrieve lesson works', 500);
         }
