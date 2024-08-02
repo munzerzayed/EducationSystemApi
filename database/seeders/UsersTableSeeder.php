@@ -17,12 +17,12 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-        /*$studentUser = User::create([
+        $studentUser = User::create([
             'name' => 'Student User',
             'email' => 'student@example.com',
             'password' => bcrypt('password')
         ]);
-        $studentUser->assignRole('student');*/
+        $studentUser->assignRole('student');
 
         $studentUser = User::create([
             'name' => 'Student User1',
@@ -31,12 +31,12 @@ class UsersTableSeeder extends Seeder
         ]);
         $studentUser->assignRole('student');
 
-        /*$teacherUser = User::create([
+        $teacherUser = User::create([
             'name' => 'Teacher User',
             'email' => 'teacher@example.com',
             'password' => bcrypt('password')
         ]);
-        $teacherUser->assignRole('teacher');*/
+        $teacherUser->assignRole('teacher');
 
         $teacherUser = User::create([
             'name' => 'Teacher User1',
@@ -45,11 +45,11 @@ class UsersTableSeeder extends Seeder
         ]);
         $teacherUser->assignRole('teacher');
 
-        /*$teacherUser = User::create([
+        $teacherUser = User::create([
             'name' => 'Super Admin',
             'email' => 'superAdmin@example.com',
             'password' => bcrypt('password')
         ]);
-        $teacherUser->assignRole('superAdmin');*/
+        $teacherUser->assignRole('superAdmin');
     }
 }
